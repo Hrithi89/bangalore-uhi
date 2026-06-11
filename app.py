@@ -207,7 +207,7 @@ poly_r2        = poly_trend_data['poly_r2']
 
 # ── Navigation ────────────────────────────────────────────────
 if 'page' not in st.session_state:
-    st.session_state.page = 'Home'
+    st.session_state.page = 'Insights'
 
 nav_cols = st.columns([2.5, 1, 1, 1, 1])
 with nav_cols[0]:
@@ -215,8 +215,8 @@ with nav_cols[0]:
                 'font-weight:700;color:#00d4aa;">🌡️ Bangalore UHI Analyser</span>',
                 unsafe_allow_html=True)
 
-pages     = ['🏠 Home', '📅 Forecast', '🔍 Insights', '❤️ Health Risk']
-page_keys = ['Home', 'Forecast', 'Insights', 'Health Risk']
+pages     = ['🏠 Dashboard', '📅 Forecast', '🔍 History', '❤️ Health Risk']
+page_keys = ['Insights', 'Forecast', 'Home', 'Health Risk']
 for col, pg, key in zip(nav_cols[1:], pages, page_keys):
     with col:
         # Active page gets special key so CSS can target it
@@ -375,7 +375,7 @@ if page == 'Home':
             # Monthly context
             st.markdown(f'''<div class="card" style="padding:0.8rem 1rem;">
                 <div class="card-title">
-                {MONTH_NAMES[sel_month-1]} historical averages</div>
+                {MONTH_NAMES[sel_month-1]}10 years historical average</div>
                 <div style="display:flex;gap:1.5rem;margin-top:0.4rem;">
                     <div>
                         <div style="font-size:1rem;font-weight:600;
